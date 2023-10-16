@@ -109,3 +109,5 @@ else:
     pass
 
 location = Game.location_request(self = Game)
+
+
