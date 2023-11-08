@@ -107,6 +107,8 @@ else:
 # DEBUG print("The game now starts loading levels...")
 
 class levels:
+    def __init__(__self__):
+        self = __self__
     def level_1(self, Game):
         Game.console_clear()
 
