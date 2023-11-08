@@ -13,7 +13,6 @@ except ImportError as e:
     print("In particular, the following imports failed:")
     print(e)
     sys.exit()
-
 print("Imports successful")
 class Game:
     def console_clear():
@@ -27,62 +26,57 @@ class Game:
 
     def wait_prompt():
         input("Press enter to continue... ")
-
-    def location_request(self):
-        solved = False
-        while solved == False:
-            location = input("Where would you like to go? ")
-            if location in self.get_locations():
-                solved = True
-                print(f"Going to {location}...")
-                Game.next()
-                Game.console_clear()
-                return location
-            else:
-                print("That location doesn't exist.")
-                Game.next()
-                Game.console_clear()
-
-    def get_locations():
-        locations = ['tavern', 'market', 'town square', 'forest', 'home']
-        return locations
-
-def get_levels():
-    levels = 'levels'
-    # Finds out what levels are available
-    levels = os.listdir(levels)
-    print(levels)
-    for i in levels:
-        print(i)
-    os.system('cls' if os.name == 'nt' else 'clear')
-    return levels
-get_levels()
-
+    def print(self, msg):
+        print(msg)
+        self.next()
+        
+    item_values = {
+        'map': 1,
+        'water': 1,
+        'food': 1,
+        'sword': 5,
+        'shield': 5,
+        'armor': 5
+    }
 # Prints welcome message
+Game.wait_prompt()
 Game()
 Game.next()
 Game.console_clear()
+Game.print("Test")                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          131721]
+
 
 # Begin game
 print("Before we begin, we need to setup your character.")
 Game.next()
-Game.console_clear()
-# Get player name
+
 class PlayerProfile:
-    name = input("What is your characters name? ")
-    age = input("What is your characters age? ")
+    """
+    This class represents the player's profile.
+    """
+    name = input("What is your character's name? ")
+    age = input("What is your character's age? ")
     sex = input("Is your character male or female? ")
     gold = 0
     inventory = ['map', 'water', 'food']
     health = 100
 
+    def check_net_worth(self):
+        """
+        This method calculates the net worth of the player's inventory.
+        """
+        net_worth = 0
+        for item in self.inventory:
+            net_worth += Game.item_values[item]
+        return net_worth
+
 # Get player class
 player = PlayerProfile()
 print(f"Hello, {player.name}!")
+
 Game.next()
 
-levels = get_levels()
-CITY_NAME = "*****"
+CITY_NAME = "City of Isso"
 
 print(f"Hello traveler, welcome to {CITY_NAME} city!")
 print(f"Here you will find many adventures and quests to complete.")
@@ -108,6 +102,12 @@ if str(tutorial_ask.lower()) in ['y', 'yes','ye']:
 else:
     pass
 
-location = Game.location_request(self = Game)
+# DEBUG print("DEBUG: Player inventory: " + str(player.inventory))
+# DEBUG print("DEBUG: Player net worth: " + str(player.check_net_worth()))
+# DEBUG print("The game now starts loading levels...")
 
+class levels:
+    def level_1(self, Game):
+        Game.console_clear()
 
+levels.level_1(Game)

@@ -4,6 +4,7 @@ def from_file():
 
 def run_tutorial(player):
     import os, time
+    import random
     class Game:
         def console_clear():
             os.system('cls' if os.name == 'nt' else 'clear')
@@ -73,6 +74,11 @@ def run_tutorial(player):
         Game.next()
         Game.console_clear()
         
+        # EDITS: 16/10/2023
+    def temp_movement_test():
+        print("A test will be added here soon. For now, Try visiting the tavern, market, town square, forest, and home.")
+        Game.wait_prompt()
+        Game.console_clear()
 
 if __name__ == "__main__":
     from_file()
