@@ -1,0 +1,4 @@
+fewer than two cells die from loneliness
+any cell with two or three live neighbors survive next generation
+Any cell with four or more cells die from overcrowding
+Any dead cell with exactly three live neighbors becomes alive (births)
